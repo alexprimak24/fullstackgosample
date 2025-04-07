@@ -13,6 +13,7 @@ interface UserInterfaceProps {
 }
 
 function UserInterface({ backendName }: UserInterfaceProps) {
+  // eslint-disable-next-line node/prefer-global/process
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
   const [users, setUsers] = useState<User[]>([])
   const [newUser, setNewUser] = useState({ name: '', email: '' })
